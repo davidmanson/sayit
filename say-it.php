@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Say It!
  * Description:       Text to speech plugin helping your website easily say something !
- * Version:           2.1.0
+ * Version:           3.0.0
  * Author:            David Manson
  * Author URI:        https://www.david-manson.com
  * License:           GPL-2.0+

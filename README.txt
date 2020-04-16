@@ -1,9 +1,9 @@
 === Say It! ===
 Contributors: dadipaq
-Tags: text-to-speech, speech, voice, tts, google-tts
-Requires at least: 3.0.1
-Tested up to: 5.1.1
-Stable tag: 2.1.0
+Tags: text-to-speech, speech, voice, tts, google-tts, amazon-polly
+Requires at least: 5.0.0
+Tested up to: 5.4.0
+Stable tag: 3.0.0
 Requires PHP: 7.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -89,6 +89,11 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 * Improved Google TTS admin area
 * Fixed js console output admin area
 * Handle config error for Google TTS 
+
+= 3.0.0 =
+* Added Amazon Polly
+* Theme functions
+* Speech pause on window blur 
 
 == Upgrade Notice ==
 
