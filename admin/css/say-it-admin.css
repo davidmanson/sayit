@@ -1,0 +1,31 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.form-table{
+    width: 100%;
+}
+
+.sayit_admin_wrapper{
+    display: none;
+}
+.sayit_admin_wrapper.active{
+    display: block;
+}
+
+.say-it-tabs a:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.say-it-tab{
+    display: none;
+}
+.say-it-tab.active{
+    display: block;
+}
+
+.google_tts_area{
+    width: 400px;
+}

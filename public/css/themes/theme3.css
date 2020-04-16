@@ -1,0 +1,84 @@
+/**
+ * The sayit elements display
+ */
+ .sayit{
+   background: rgb(241, 243, 245);
+   border-radius: 4px;
+   cursor: pointer;
+   padding: .0em .3em;
+   transition: all .2s;
+   position: relative;
+}
+
+.sayit.active{
+   animation: speaking 1.5s infinite linear;
+}
+
+@keyframes speaking {
+  0% { box-shadow: 0 0 0px #f78da7; }
+  50% { box-shadow: 0 0 10px #f78da7; }
+  100% { box-shadow: 0 0 0px #f78da7; }
+}
+
+
+/**
+ * The sayit tooltip
+ */
+.sayit-tooltip{
+  position: absolute;
+  left: 50%;
+  top: -27px;
+  margin-left: -40px;
+  width: 80px;
+  height: 25px;
+
+  background: white;
+  box-shadow: 0px 1px 3px 0 rgba(28,55,90,.2);
+  border-radius: 10px;
+
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 25px;
+  color: #444;
+
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(.8);
+}
+
+.sayit-tooltip::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  bottom: -9px;
+  left: 50%;
+  box-sizing: border-box;
+  
+  border: 5px solid black;
+  border-color: transparent transparent #fff #fff;
+  
+  transform-origin: 0 0;
+  transform: rotate(-45deg);
+  
+  box-shadow: -2px 2px 2px 0 rgba(28,55,90,.15);
+}
+
+.sayit:hover .sayit-tooltip{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/**
+ * Hide tooltip on mobile
+ */
+@media screen and (max-width: 720px){
+   .sayit-tooltip{
+      display: none;
+   }
+}

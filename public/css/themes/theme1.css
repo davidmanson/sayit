@@ -1,0 +1,102 @@
+/**
+ * The sayit elements display
+ */
+ .sayit{
+   background: rgb(241, 243, 245);
+   border-radius: 4px;
+   cursor: pointer;
+   padding: .1em .3em;
+   transition: all .2s;
+   position: relative;
+}
+
+.sayit:before{
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Ebutton%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='button' fill='%23ff4710' fill-rule='nonzero'%3E%3Cpolygon id='play' points='14 10 8 5.5 8 14.5'%3E%3C/polygon%3E%3Cpath d='M10,1 C5.05228475,1 1,5.05228475 1,10 C1,14.9477153 5.05228475,19 10,19 C14.9477153,19 19,14.9477153 19,10 C19,5.05228475 14.9477153,1 10,1 Z' id='circle' stroke='%23ff4710' stroke-width='2' fill-opacity='0'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  content: '';
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-right: 5px;
+}
+
+.sayit:hover:before{
+  background-image: url("data:image/svg+xml;charset=utf8,%3C?xml version='1.0' encoding='UTF-8'?%3E%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Ebutton%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='button' fill-rule='nonzero'%3E%3Cpath d='M10,1 C5.05228475,1 1,5.05228475 1,10 C1,14.9477153 5.05228475,19 10,19 C14.9477153,19 19,14.9477153 19,10 C19,5.05228475 14.9477153,1 10,1 Z' id='circle' stroke='%23FF510D' stroke-width='2' fill='%23FF4710'%3E%3C/path%3E%3Cpolygon id='play' fill='%23FFFFFF' points='14 10 8 5.5 8 14.5'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.sayit.active{
+   animation: speaking 1.5s infinite linear;
+}
+
+@keyframes speaking {
+  0% { box-shadow: 0 0 0px #f78da7; }
+  50% { box-shadow: 0 0 10px #f78da7; }
+  100% { box-shadow: 0 0 0px #f78da7; }
+}
+
+
+/**
+ * The sayit tooltip
+ */
+.sayit-tooltip{
+  position: absolute;
+  left: 50%;
+  top: -27px;
+  margin-left: -40px;
+  width: 80px;
+  height: 25px;
+
+  background: white;
+  box-shadow: 0px 1px 3px 0 rgba(28,55,90,.2);
+  border-radius: 10px;
+
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 25px;
+  color: #444;
+
+  transition: .3s;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(.8);
+}
+
+.sayit-tooltip::after{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-left: -5px;
+  bottom: -9px;
+  left: 50%;
+  box-sizing: border-box;
+  
+  border: 5px solid black;
+  border-color: transparent transparent #fff #fff;
+  
+  transform-origin: 0 0;
+  transform: rotate(-45deg);
+  
+  box-shadow: -2px 2px 2px 0 rgba(28,55,90,.15);
+}
+
+.sayit:hover .sayit-tooltip{
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+/**
+ * Hide tooltip on mobile
+ */
+@media screen and (max-width: 720px){
+   .sayit-tooltip{
+      display: none;
+   }
+}
