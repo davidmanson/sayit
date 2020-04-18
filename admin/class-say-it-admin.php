@@ -323,6 +323,7 @@ class Say_It_Admin {
 		$valid['amazon_polly_key'] = ( isset( $input['amazon_polly_key'] ) && ! empty( $input['amazon_polly_key'] ) ) ? esc_attr( $input['amazon_polly_key'] ) : null;
 		$valid['amazon_polly_secret'] = ( isset( $input['amazon_polly_secret'] ) && ! empty( $input['amazon_polly_secret'] ) ) ? esc_attr( $input['amazon_polly_secret'] ) : null;
 		$valid['amazon_voice'] = ( isset( $input['amazon_voice'] ) && ! empty( $input['amazon_voice'] ) ) ? esc_attr( $input['amazon_voice'] ) : 'Kimberly';
+		$valid['tooltip_text'] = ( isset( $input['tooltip_text'] ) && ! empty( $input['tooltip_text'] ) ) ? esc_attr( $input['tooltip_text'] ) : 'Listen';
 
 		$valid['skin'] = ( isset( $input['skin'] ) && ! empty( $input['skin'] ) ) ? esc_attr( $input['skin'] ) : null;
 

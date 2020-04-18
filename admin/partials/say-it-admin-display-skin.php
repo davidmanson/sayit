@@ -16,6 +16,7 @@ if ( ! defined( 'WPINC' ) ) die;
 
 $options = get_option($this->plugin_name);
 $skin = ( isset( $options['skin'] ) && ! empty( $options['skin'] ) ) ? esc_attr( $options['skin'] ) : 0;
+$tooltip_text = ( isset($options['tooltip_text']) ) ? $options['tooltip_text'] : '';
 $theme_root = $this->folder . 'public/css/themes';
 $skins = @ scandir( $theme_root );
 ?>
@@ -43,5 +44,19 @@ if ( ! $skins ) {
                 </select>
             </td>
         </tr>
+
+        <tr>
+            <th scope="row">
+                <label for="<?php echo $this->plugin_name; ?>[tooltip_text]">
+                    <?php _e( 'Tooltip text', $this->plugin_name ); ?>
+                </label>
+            </th>
+            <td>
+                <div>
+                    <input type="text" value="<?php echo $tooltip_text; ?>" id="<?php echo $this->plugin_name; ?>-tooltip_text" name="<?php echo $this->plugin_name; ?>[tooltip_text]">
+                </div>
+            </td>
+        </tr>
+
     </tbody>
 </table>

@@ -296,7 +296,7 @@ class Say_It_Public {
 
 	/**
 	 * Register main shortcode
-	 * @since    1.0.0
+	 * @since    3.0.1
 	 */
 	public function shortcode_function( $atts, $content = null ) {
 		/* Say it not enable, we just return the content */
@@ -358,9 +358,9 @@ class Say_It_Public {
 		}
 
 		/* Return everything we need for the javascript companion */
-		$return = '<'.$blocktype.' class="sayit" data-say-content="'.$args['alt'].'" data-error="'.$this->google_tts_error.'" data-speed="'.$args['speed'].'" data-lang="'.$args['lang'].'" '.$google_tts_attribute.' '.$mp3_attribute.'>';
+		$return = '<'.$blocktype.' class="sayit" data-say-content="'.$words.'" data-error="'.$this->google_tts_error.'" data-speed="'.$args['speed'].'" data-lang="'.$args['lang'].'" '.$google_tts_attribute.' '.$mp3_attribute.'>';
 		$return .= $content;
-		$return .= '<span class="sayit-tooltip">'.__('Écouter').'</span>';
+		$return .= '<span class="sayit-tooltip">'.$this->options['tooltip_text'].'</span>';
 		$return .= '</'.$blocktype.'>';
 		return $return;
 	}
