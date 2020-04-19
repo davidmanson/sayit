@@ -42,6 +42,9 @@
             this.el.on('click', this.AltMp3Speak.bind(this));
         },
         AltMp3Speak: function(e) {
+            if($(e.target).is('a') ){
+                return console.log('got a link, not playing');      
+            }
             e.stopPropagation();
             if(window.gAudio){
                 window.gAudio.pause();
@@ -57,6 +60,9 @@
             return;
         },
         HTML5Speak: function(e) {
+            if($(e.target).is('a') ){
+                return console.log('got a link, not playing');      
+            }
             e.stopPropagation();
             // Speacking before ? Stop !
             if(speechSynthesis.speaking) speechSynthesis.cancel()        

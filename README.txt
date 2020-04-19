@@ -3,7 +3,7 @@ Contributors: dadipaq
 Tags: text-to-speech, speech, voice, tts, google-tts, amazon-polly
 Requires at least: 5.0.0
 Tested up to: 5.4.0
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 Requires PHP: 7.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,12 +13,12 @@ Text to speech plugin helping your website easily say something !
 
 == Description ==
 
-Say It! allows you to easily turn parts of your WordPress articles into speech audio.
+Say It! allows you to easily turn parts of your WordPress articles into audio speech.
 The plugin is using modern HTML5 Speech Synthesis and doesn't require any subscriptions or service, install it, enjoy it!
 
 Once installed, you just need to wrap any content between [sayit] shortcode. Once done, your users can simply click on the text to make it speak.
 
-Want better quality ? Say It! now offers Google Cloud TTS compatibility, get your json key from google, past it in the plugin options and go !
+Want better quality ? Say It! now offers Google Cloud TTS and Amazon Polly compatibility !
 
 = Parameters (for HTML5 Speech only) =
 * lang - Use a language different from the default one
@@ -100,3 +100,6 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 = 3.0.2 =
 * Added Possibility to change tooltip text
+
+= 3.0.3 =
+* Prevent audio play when click on a link inside sayit shortcode
